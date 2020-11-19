@@ -39,7 +39,7 @@
             <button @click="addTodo" type="button" name="button">Aggiungi</button>
           </div>
           <ul id="todolistitem" class="col-8 d-flex flex-column-reverse">
-            <li class="d-flex justify-content-between" v-for="(mytodo, index) in myTodos">{{ mytodo }} <a @click="removeTodo(index)" href="#"><i class="fas fa-trash-alt"></i></a></li>
+            <li @click="addColor(index)" v-bind:class="mytodo.isActive" class="d-flex justify-content-between" v-for="(mytodo, index) in myTodos">{{ mytodo.todoel }} <a @click.stop="removeTodo(index)" href="#"><i class="fas fa-trash-alt"></i></a></li>
           </ul>
         </div>
       </div>
